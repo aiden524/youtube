@@ -15,7 +15,7 @@ git diff --cached --quiet -- transcripts && exit 0   # 바뀐 게 없으면 끝
 BRANCH="$(git symbolic-ref --quiet --short HEAD 2>/dev/null)" || exit 0
 [ -n "$BRANCH" ] || exit 0
 
-git commit -q -m "Update transcript ($(date +%Y-%m-%d\ %H:%M))" \
+git commit -q -m "Update transcript ($(TZ=Asia/Seoul date "+%Y-%m-%d %H:%M KST"))" \
   -m "Co-Authored-By: Claude <noreply@anthropic.com>" \
   -- transcripts >/dev/null 2>&1 || exit 0
 
