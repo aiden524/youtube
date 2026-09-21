@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/sync-transcript.sh\"",
+            "timeout": 90,
+            "statusMessage": "대화록 저장 중..."
+          }
+        ]
+      }
+    ]
+  }
+}
